@@ -1,0 +1,10 @@
+.item{
+  border: 1px solid black;
+  position: relative;
+  height: 100px;
+}
+.img{
+  position: absolute;
+  top: 15px;
+  right: 50px;
+}
