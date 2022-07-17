@@ -6,7 +6,7 @@ const Item = ({value}) => {
     <div className='item'>
       <div className='name'>{value.name.first} {value.name.last}</div>
       <div className='email'>{value.email}</div>
-      <img className='img' src={value.picture.medium} alt="user image" />
+      <img className='img' src={value.picture.medium} alt="" />
     </div>
   )
 }

@@ -1,5 +1,5 @@
 .item{
-  border: 1px solid black;
+  border-bottom: 1px solid black;
   position: relative;
   height: 100px;
 }
@@ -7,4 +7,16 @@
   position: absolute;
   top: 15px;
   right: 50px;
+  border-radius: 5px;
+}
+.name{
+  margin-top: 15px;
+}
+@media (max-width: 522px){
+  .img{
+    top: 5px;
+    right: 10px;
+    max-width: 15%;
+    height: auto;
+  }
 }

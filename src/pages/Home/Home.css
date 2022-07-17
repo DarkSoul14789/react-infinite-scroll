@@ -1,0 +1,33 @@
+.loader{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lgbtn{
+  position: fixed;
+  transition: 0.5s;
+  cursor: pointer;
+  left: 15px;
+  background-color: orange;
+  border-radius: 5px;
+  border-color: orange; 
+  height: 40px;
+  width: 80px;
+  z-index: 10;
+}
+.lgbtn:hover{
+  box-shadow: 2px 2px black;
+}
+.logout{
+  position: relative;
+}
+
+@media (max-width: 450px){
+  .lgbtn{
+    left: 2px;
+    top: 10px;
+    width: 60px;
+    height: 30px;
+  }
+}
