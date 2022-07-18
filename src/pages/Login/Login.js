@@ -1,16 +1,31 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './Login.css'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
+import { useNavigate, Outlet, Navigate } from 'react-router-dom'
+import { UserContext } from '../../App'
 
-const Login = () => {
-  const username = useRef('');
-  const password = useRef('');
-  const error = useRef(null);
+export const Protected =()=>{
+  return(
+    localStorage.getItem("isAuthenticated") ? <Outlet/> : <Navigate to={'/'} />
+    )
+  }
+  
+  const Login = () => {
+    const username = useRef('');
+    const password = useRef('');
+    const error = useRef(null);
+    
+    const [context, setContext] = useContext(UserContext);
+
+    const navigate = useNavigate();
+
+
 
   const handleClick = ()=>{
     if(username.current.value === 'foo' && password.current.value === 'bar'){
-      console.log('Logged in');
+      setContext(true);
       error.current.style.display = 'none';
+      navigate('home');
     }else{
       error.current.style.display = 'block';
     }

@@ -1,16 +1,20 @@
 import React from 'react'
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
 import Item from '../../components/Item/Item';
 import axios from 'axios';
 import { Audio } from  'react-loader-spinner'
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import './Home.css'
+import { UserContext } from '../../App'
 
 const Home = () => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const [end, setEnd] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  const [context, setContext] = useContext(UserContext);
+
 
   const loadData = async ()=>{
     const result = await axios.get(`https://randomuser.me/api/?page=${page}&results=10&seed=abc`);
@@ -20,9 +24,6 @@ const Home = () => {
     if(e.target.documentElement.scrollTop + window.innerHeight +1 >= e.target.documentElement.scrollHeight && !end && !loading){
       if(page<=4){
         setLoading(true);
-        // setTimeout(()=>{
-        //   setPage(page+1);
-        // },1000)
         setPage(page+1);
         setLoading(false);
       }
@@ -45,10 +46,14 @@ const Home = () => {
       },1000)
     }
   },[page]);
+
+  const handleClick = ()=>{
+    setContext(false);
+  }
   return (
     <div>
       <div className='logout'>
-        <button className='lgbtn'>Logout</button>
+        <button className='lgbtn' onClick={handleClick}>Logout</button>
       </div>
       {data.map((value,index)=>{
         return (
@@ -58,8 +63,8 @@ const Home = () => {
       {
         !end && <div className='loader'>
           <Audio
-          height="100"
-          width="100"
+          height="75"
+          width="75"
           color='orange'
           ariaLabel='loading'
           />
