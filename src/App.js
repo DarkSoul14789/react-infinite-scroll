@@ -8,7 +8,6 @@ import ProtectedRoute from './authRoute/ProtectedRoute';
 export const UserContext = createContext();
 
 function App() {
-  localStorage.setItem("isAuthenticated",false);
 
   const [context, setContext] = useState(false);
 
