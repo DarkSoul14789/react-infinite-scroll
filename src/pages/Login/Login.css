@@ -1,0 +1,39 @@
+.error{
+  display: none;
+  margin-top: 15px;
+  color: red;
+  font-size: large;
+}
+.Login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+button{
+  font-size: medium;
+  margin-top: 15px;
+  transition: 0.5s;
+  cursor: pointer;
+  left: 15px;
+  background-color: orange;
+  border-radius: 5px;
+  border-color: orange; 
+  height: 40px;
+  width: 80px;
+}
+button:hover{
+  box-shadow: 2px 2px black;
+}
+.username{
+  margin-bottom: 10px;
+  font-size: large;
+}
+input{
+  width: 175px;
+  height: 20px;
+}
+.password{
+  font-size: large;
+}
