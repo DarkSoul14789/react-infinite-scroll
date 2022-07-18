@@ -8,4 +8,7 @@
 
 The app will run on localhost:3000
 
+## Username is `foo`
+## Password is `bar`
+
 happy hacking!
